@@ -55,7 +55,7 @@ public class Lecture4Exercises {
      *   implement a function that return reverse of a given word
      *   lecture 4 page 19
      */
-    public static String reverse(String word) {
+    public String reverse(String word) {
         char[] resultArray = word.toCharArray();
         String result="";
         for (int i = resultArray.length - 1; i >= 0; i--){
@@ -70,7 +70,7 @@ public class Lecture4Exercises {
      *   palindrome is like 'wow', 'never odd or even', 'Wow'
      *   lecture 4 page 19
      */
-    public static boolean isPalindrome(String line) {
+    public  boolean isPalindrome(String line) {
         String[] strSplit=line.split(" ");
         String strFinal="";
         for(int i=0;i<strSplit.length;i++){

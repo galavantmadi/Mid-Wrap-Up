@@ -1,12 +1,29 @@
 public class Lecture5Exercises {
 
+
+
     /*
      *   implement a function to create a random password with
      *   given length using lower case letters
      *   lecture 5 page 14
      */
-    public String weakPassword(int length) {
-        return null;
+    public  String weakPassword(int length) {
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                + "0123456789"
+                + "abcdefghijklmnopqrstuvxyz";
+
+        StringBuilder sb = new StringBuilder(length);
+
+        for (int i = 0; i < length; i++) {
+
+            int index
+                    = (int)(AlphaNumericString.length()
+                    * Math.random());
+
+            sb.append(AlphaNumericString
+                    .charAt(index));
+        }
+        return sb.toString();
     }
 
     /*
@@ -14,8 +31,25 @@ public class Lecture5Exercises {
      *   given length and at least 1 digit and 1 special character
      *   lecture 5 page 14
      */
-    public String strongPassword(int length) throws Exception {
-        return null;
+    public  String strongPassword(int length) throws Exception {
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                + "0123456789"
+                + "abcdefghijklmnopqrstuvxyz"
+                +"~=+%^*/()[]{}/!@#$?|";
+
+        StringBuilder sb = new StringBuilder(length);
+
+        for (int i = 0; i < length; i++) {
+
+            int index
+                    = (int)(AlphaNumericString.length()
+                    * Math.random());
+
+            sb.append(AlphaNumericString
+                    .charAt(index));
+        }
+        return sb.toString();
+
     }
 
     /*
@@ -27,6 +61,12 @@ public class Lecture5Exercises {
      *   lecture 5 page 17
      */
     public boolean isFiboBin(int n) {
-        return false;
+        return isSquare(5*n*n + 4) ||
+                isSquare(5*n*n - 4);
+    }
+
+    public boolean isSquare(int x){
+        int s = (int) Math.sqrt(x);
+        return (s*s == x);
     }
 }
