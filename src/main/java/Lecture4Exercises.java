@@ -4,7 +4,7 @@ public class Lecture4Exercises {
      *   implement a function that returns factorial of given n
      *   lecture 4 page 15
      */
-    public long factorial(int n) {
+    public  long factorial(int n) {
         long fact=1;
         for(int i=1;i<=n;i++){
             fact=fact*i;
@@ -13,27 +13,7 @@ public class Lecture4Exercises {
     }
 
     public static void main(String[] args) {
-        /*String line="never odd or even";
-        String[] strSplit=line.split(" ");
-        String strFinal="";
-        for(int i=0;i<strSplit.length;i++){
-            strFinal=strFinal+strSplit[i];
-        }
-        System.out.println(strFinal);
-        String s="";
-        int len=(strFinal.length()%2)==0?(strFinal.length()/2):(strFinal.length()/2)+1;
-        for (int i=0;i<len;i++){
-                s=s+strFinal.substring(i,i+1);
-        }
-        System.out.println(s);
-        s="";
-        for(int j=strFinal.length();j>strFinal.length()/2;j--){
-            s=s+strFinal.substring(j-1,j);
-        }
-        System.out.println(s);*/
-        //System.out.println(isPalindrome("Wow"));
-        //dotPlot("hello","hello");
-
+        //System.out.println(fibonacci(2));
 
     }
 
@@ -42,7 +22,7 @@ public class Lecture4Exercises {
      *   the series -> 1, 1, 2, 3, 5, 8, ...
      *   lecture 4 page 19
      */
-    public  long fibonacci(int n) {
+    public static   long fibonacci(int n) {
         if (n <= 1) {
             return n;
         }
@@ -106,30 +86,31 @@ public class Lecture4Exercises {
      *   lecture 4 page 26
      */
     public char[][] dotPlot(String str1, String str2) {
-        char[] str1Array = "hello".toCharArray();
-        char[] str2Array = "hello".toCharArray();
-        System.out.print("   ");
-        for(int i=0;i<str1Array.length;i++){
-            System.out.print(str1Array[i]+" ");
-
+        char[] str1Array=null;
+        char[] str2Array=null;
+        if(str1.length()>=str2.length()){
+            str1Array = str1.toCharArray();
+            str2Array = str2.toCharArray();
+        }else {
+            str1Array = str2.toCharArray();
+            str2Array = str1.toCharArray();
         }
-        System.out.println("");
+
+        char prod[][] = new char[str1.length()][str2.length()];
+
+
+
         for(int i=0;i<str2Array.length;i++){
-            System.out.print(str2Array[i]);
-            System.out.print("  ");
             for (int j=0;j<str1Array.length;j++){
-
                 if(str1Array[j]==str2Array[i]){
-
-                    System.out.print("*");
+                    prod[i][j] ='*';
                 }else {
-                    System.out.print(" ");
+                    prod[i][j] =' ';
                 }
-                System.out.print(" ");
 
             }
-            System.out.println("");
         }
-        return null;
+
+        return prod;
     }
 }
